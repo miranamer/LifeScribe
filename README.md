@@ -1,4 +1,4 @@
-![LifeScribeLogo](https://github.com/miranamer/LifeScribe/assets/91673777/e9aa9ad6-1cf4-41fb-a1d6-024f9ad39778)
+![LifeScribeLogo](https://github.com/miranamer/LifeScribe/assets/91673777/57d56849-20e4-444c-84e1-a2fb6e252d68)
 
 <h1>What Is LifeScribe?</h1>
 <p>It can be said that a persons life is the sum of their choices, and so LifeScribe allows you to record the choices in your daily life and the result of those choices. It does this using a decision tree data structure
@@ -18,7 +18,11 @@ which allows you to store nested choices - as in one choice may be linked to ano
 
 
 
-https://github.com/miranamer/LifeScribe/assets/91673777/444635e9-cff3-4cf7-b1eb-424eed9ef170
+
+
+
+https://github.com/miranamer/LifeScribe/assets/91673777/1ddede26-04e9-4153-896a-7692c6833b66
+
 
 
 
