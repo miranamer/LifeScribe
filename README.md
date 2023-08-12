@@ -1,27 +1,33 @@
-# React + TypeScript + Vite
+![LifeScribeLogo](https://github.com/miranamer/LifeScribe/assets/91673777/e9aa9ad6-1cf4-41fb-a1d6-024f9ad39778)
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+<h1>What Is LifeScribe?</h1>
+<p>It can be said that a persons life is the sum of their choices, and so LifeScribe allows you to record the choices in your daily life and the result of those choices. It does this using a decision tree data structure
+which allows you to store nested choices - as in one choice may be linked to another. The dates are also stored besides the node to tell you when the choices were made. In a way, LifeScribe can be considered to be an alternate form of journaling, allowing you to record the events of your life and the outcomes. You can trace back to the start to see how your life developed over time and how it could have possibly been different based on other choices.</p>
 
-Currently, two official plugins are available:
+<h1>How To Use It?</h1>
+<p>In order to add your choices and results, you can click on the root node or any already existing node to open the node menu. Once at the node menu you can do 1 of 4 things</p>
+<ol>
+   <li>Add A Choice Node</li>
+   <li>Add A Result Node</li>
+   <li>Edit Node</li>
+   <li>Delete Selected Node and All Child Nodes</li>
+</ol>
+<p>NOTE: it is only possible to add 1 result node to a choice node and if a result node is linked as a child to a choice node, that choice node cannot store any other nodes except for the result node. This is becuase every choice should have at most 1 possible result.</p>
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+<h1>v1 Alpha - Demo Vid</h1>
 
-## Expanding the ESLint configuration
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
 
-- Configure the top-level `parserOptions` property like this:
+https://github.com/miranamer/LifeScribe/assets/91673777/444635e9-cff3-4cf7-b1eb-424eed9ef170
 
-```js
-   parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json'],
-    tsconfigRootDir: __dirname,
-   },
-```
 
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
+
+<p>NOTE: The dates used in the demo vid are random to show how the labels would change for different dates. Actual product would use current date.</p>
+
+<h1>Future Ideas</h1>
+<ul>
+   <li>Add User Authentication to store users' lifescribes</li>
+   <li>Group choices based on choice type (e.g: Diet, Finance, Hobbies)</li>
+   <li>Use Users' LifeScribes to train a ML model to allow people to determine the choices they should make based on what they want in the future and how other peoples experiences shaped their lives.</li>
+   <li>Create an option to use a service such as Midjourney to generate images of what your life could have looked like based on the other choices you didnt pursue.</li>
+</ul>
