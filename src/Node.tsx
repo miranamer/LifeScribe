@@ -14,15 +14,50 @@ import {
 } from '@chakra-ui/react'
 import { conditionalExpression } from '@babel/types';
 
-export default function Node({node, data, setData}){
+export default function Node({node, data, setData, displayedDates, setDisplayedDates, level, onDateAdded, dateLevelsMap}){
+
+
+
   const { isOpen, onOpen, onClose } = useDisclosure()
   const [newNodeText, setNewNodeText] = useState('');
   const [canAddChild, setCanAddChild] = useState(true);
   const [canAddResult, setCanAddResult] = useState(true);
 
+  //const addChildNode = () => {
+    //node.children.push({text: newNodeText, children: []});
+    //setData({...data})
+  //}
+
   const addChildNode = () => {
-    node.children.push({text: newNodeText, children: []});
-    setData({...data})
+    const currentDate = new Date().toLocaleDateString();
+    const randomDate = generateRandomDate(new Date(2022, 0, 1), new Date());
+  
+    // Check if the current date or randomDate is not in displayedDates
+    if (!displayedDates.includes(currentDate) || !displayedDates.includes(randomDate.toLocaleDateString())) {
+      const newNode = { text: newNodeText, children: [], date: randomDate };
+      node.children.push(newNode);
+      
+      // Update displayedDates with the new date
+      const updatedDates = [...displayedDates];
+      if (!updatedDates.includes(randomDate.toLocaleDateString())) {
+        updatedDates.push(randomDate.toLocaleDateString());
+      }
+      setDisplayedDates(updatedDates);
+  
+      onDateAdded(randomDate.toLocaleDateString(), level); // Pass the level here
+  
+      setData({ ...data });
+    } else {
+      node.children.push({ text: newNodeText, children: [], date: randomDate });
+      setData({ ...data });
+    }
+  };
+
+  function generateRandomDate(from, to) {
+    return new Date(
+      from.getTime() +
+        Math.random() * (to.getTime() - from.getTime()),
+    );
   }
 
   const addResultNode = () => {
@@ -72,6 +107,13 @@ export default function Node({node, data, setData}){
   return(
     
     
+    <div className='pointer' onClick={onOpen}>
+    {level === 0 && node.date ? (
+      <div className="date-title">
+        {new Date(node.date).toLocaleDateString()}
+      </div>
+    ) : null}
+
     <TreeNode
     label={
       <div
@@ -124,6 +166,6 @@ export default function Node({node, data, setData}){
         </ModalContent>
       </Modal>
       </TreeNode>
-      
+      </div>
   )
 }
