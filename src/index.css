@@ -1,0 +1,32 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.StyledNode{
+    padding: 5px;
+    border-radius: 8px;
+    display: inline-block;
+    border: 1px solid blue;
+}
+
+.ResultNode{
+    padding: 5px;
+    border-radius: 8px;
+    display: inline-block;
+    border: 1px solid green;
+}
+
+.pointer{
+    cursor: pointer;
+}
+
+/* Add to your styles.css */
+.node-container {
+    position: relative;
+    display: inline-block;
+  }
+  
+  .selected {
+    background-color: rgba(0, 0, 255, 0.2);
+    border: 2px solid rgba(0, 0, 255, 0.5);
+  }
