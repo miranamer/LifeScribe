@@ -61,7 +61,7 @@ export default function Node({node, data, setData, displayedDates, setDisplayedD
   }
 
   const addResultNode = () => {
-    node.children.push({text: newNodeText, children: [], result: true});
+    node.children.push({text: newNodeText, children: [], result: true, date: generateRandomDate(new Date(2022, 0, 1), new Date())});
     setData({...data})
   }
 
@@ -117,8 +117,8 @@ export default function Node({node, data, setData, displayedDates, setDisplayedD
     <TreeNode
     label={
       <div
-        className={`pointer hover:bg-gray-300 ${
-          node.result !== true ? `StyledNode` : `ResultNode`
+        className={`pointer  font-semibold ${
+          node.result !== true ? `StyledNode hover:bg-purple-700` : `ResultNode hover:bg-green-700`
         }`}
         onClick={onOpen}
       >
@@ -129,7 +129,7 @@ export default function Node({node, data, setData, displayedDates, setDisplayedD
       
       <Modal isOpen={isOpen} onClose={onClose}>
         <ModalOverlay />
-        <ModalContent>
+        <ModalContent className='border-2-white'>
           <ModalHeader>Node Menu</ModalHeader>
           <ModalCloseButton />
           <ModalBody>
